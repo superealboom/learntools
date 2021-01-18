@@ -11,19 +11,31 @@ import java.util.Map;
 
 
 @Controller
-@RequestMapping("freemarker")
-public class FreemarkerController {
+@RequestMapping("templates")
+public class TemplatesController {
 
     /**
      * 测试freemarker
      * @param modelMap
      * @return
      */
-    @RequestMapping("test")
+    @RequestMapping("freemarker")
     public String testFreemarker(ModelMap modelMap) {
         modelMap.put("users", getUserForm());//测试freemarker返回表格
-        modelMap.put("title", "测试title");//测试freemarker返回字符串
+        modelMap.put("title", "测试freemarker");//测试freemarker返回字符串
         return "freemarker/test";
+    }
+
+    /**
+     * 测试thymeleaf
+     * @param modelMap
+     * @return
+     */
+    @RequestMapping("thymeleaf")
+    public String testThymeleaf(ModelMap modelMap) {
+        modelMap.put("users", getUserForm());//测试freemarker返回表格
+        modelMap.put("title", "测试thymeleaf");//测试freemarker返回字符串
+        return "thymeleaf/test";
     }
 
     /**

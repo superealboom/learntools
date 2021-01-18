@@ -1,5 +1,10 @@
-#freemarker静态资源配置
 spring:
+  #spring.mvc.static-path-pattern=/static/** 加载静态资源
+  mvc:
+    static-path-pattern: /static/**
+
+
+  #freemarker静态资源配置
   freemarker:
     #设置ftl文件路径
     template-loader-path: classpath:/templates
@@ -13,6 +18,21 @@ spring:
     suffix: .ftl
     #是否检查templates路径是否存在
     check-template-location: true
-  #spring.mvc.static-path-pattern=/static/** 加载静态资源
-  mvc:
-    static-path-pattern: /static/**
+
+
+  #thymeleaf静态资源配配置
+  thymeleaf:
+    #文件路径
+    prefix: classpath:/templates/
+    #后缀
+    suffix: .html
+    #模式
+    mode: HTML5
+    #编码
+    encoding: UTF-8
+    #识别文件类型
+    #关闭缓存，及时更新，上线需要改成true
+    cache: false
+    servlet:
+      content-type: text/html
+
