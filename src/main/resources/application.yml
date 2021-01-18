@@ -1,0 +1,18 @@
+#freemarker静态资源配置
+spring:
+  freemarker:
+    #设置ftl文件路径
+    template-loader-path: classpath:/templates
+    #关闭缓存，及时更新，上线需要改成true
+    cache: false
+    #编码格式
+    charset: UTF-8
+    #识别文件类型
+    content-type: text/html
+    #freemarker后缀
+    suffix: .ftl
+    #是否检查templates路径是否存在
+    check-template-location: true
+  #spring.mvc.static-path-pattern=/static/** 加载静态资源
+  mvc:
+    static-path-pattern: /static/**
