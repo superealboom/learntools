@@ -1,38 +1,69 @@
 spring:
-  #spring.mvc.static-path-pattern=/static/** ¼ÓÔØ¾²Ì¬×ÊÔ´
+
+  #æ•°æ®åº“é…ç½®
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8
+    username: root
+    password: root
+
+
+  #spring.mvc.static-path-pattern=/static/** åŠ è½½é™æ€èµ„æº
   mvc:
     static-path-pattern: /static/**
 
 
-  #freemarker¾²Ì¬×ÊÔ´ÅäÖÃ
+  #freemarkeré™æ€èµ„æºé…ç½®
   freemarker:
-    #ÉèÖÃftlÎÄ¼şÂ·¾¶
+    #è®¾ç½®ftlæ–‡ä»¶è·¯å¾„
     template-loader-path: classpath:/templates
-    #¹Ø±Õ»º´æ£¬¼°Ê±¸üĞÂ£¬ÉÏÏßĞèÒª¸Ä³Étrue
+    #å…³é—­ç¼“å­˜ï¼ŒåŠæ—¶æ›´æ–°ï¼Œä¸Šçº¿éœ€è¦æ”¹æˆtrue
     cache: false
-    #±àÂë¸ñÊ½
+    #ç¼–ç æ ¼å¼
     charset: UTF-8
-    #Ê¶±ğÎÄ¼şÀàĞÍ
+    #è¯†åˆ«æ–‡ä»¶ç±»å‹
     content-type: text/html
-    #freemarkerºó×º
+    #freemarkeråç¼€
     suffix: .ftl
-    #ÊÇ·ñ¼ì²étemplatesÂ·¾¶ÊÇ·ñ´æÔÚ
+    #æ˜¯å¦æ£€æŸ¥templatesè·¯å¾„æ˜¯å¦å­˜åœ¨
     check-template-location: true
 
 
-  #thymeleaf¾²Ì¬×ÊÔ´ÅäÅäÖÃ
+  #thymeleafé™æ€èµ„æºé…é…ç½®
   thymeleaf:
-    #ÎÄ¼şÂ·¾¶
+    #æ–‡ä»¶è·¯å¾„
     prefix: classpath:/templates/
-    #ºó×º
+    #åç¼€
     suffix: .html
-    #Ä£Ê½
+    #æ¨¡å¼
     mode: HTML5
-    #±àÂë
+    #ç¼–ç 
     encoding: UTF-8
-    #Ê¶±ğÎÄ¼şÀàĞÍ
-    #¹Ø±Õ»º´æ£¬¼°Ê±¸üĞÂ£¬ÉÏÏßĞèÒª¸Ä³Étrue
+    #è¯†åˆ«æ–‡ä»¶ç±»å‹
+    #å…³é—­ç¼“å­˜ï¼ŒåŠæ—¶æ›´æ–°ï¼Œä¸Šçº¿éœ€è¦æ”¹æˆtrue
     cache: false
     servlet:
       content-type: text/html
+
+
+myprops:
+  className: com.afuo.learntools.pojo.User
+  methodName: eat
+  userIdList:
+    - 1001
+    - 1002
+  userMap:
+    id: 1003
+    name: zhangsan
+  userList:
+    - id: 1004
+      name: "æå››"
+    - id: 1005
+      name: "ç‹äº”"
+
+
+#mybatisæ—¥å¿—
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
